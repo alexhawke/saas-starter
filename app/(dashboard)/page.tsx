@@ -1,19 +1,23 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CreditCard, Database } from 'lucide-react';
+import { ArrowRight, CreditCard, Database, Layers, Sparkles, Zap } from 'lucide-react';
 import { Terminal } from './terminal';
 
 export default function HomePage() {
   return (
     <main>
-      <section className="py-20">
+      <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
             <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
-              <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl">
+              <div className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-orange-50 text-orange-700 border border-orange-100 mb-4">
+                <Sparkles className="mr-1.5 h-3.5 w-3.5" />
+                SaaS Template
+              </div>
+              <h1 className="text-4xl font-bold text-slate-900 tracking-tight sm:text-5xl md:text-6xl">
                 Build Your SaaS
-                <span className="block text-orange-500">Faster Than Ever</span>
+                <span className="block bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">Faster Than Ever</span>
               </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+              <p className="mt-4 text-xl text-slate-600 leading-relaxed">
                 Launch your SaaS product in record time with our powerful,
                 ready-to-use template. Packed with modern technologies and
                 essential integrations.
@@ -23,15 +27,18 @@ export default function HomePage() {
                   href="https://vercel.com/templates/next.js/next-js-saas-starter"
                   target="_blank"
                 >
-                  <Button className="bg-white hover:bg-gray-100 text-black border border-gray-200 rounded-full text-lg px-8 py-4 inline-flex items-center justify-center">
-                    Deploy your own
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                  <Button className="relative overflow-hidden group bg-slate-900 hover:bg-slate-800 text-white shadow-lg rounded-full text-lg px-8 py-6 inline-flex items-center justify-center">
+                    <span className="relative z-10">Deploy your own</span>
+                    <ArrowRight className="relative z-10 ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   </Button>
                 </a>
               </div>
             </div>
             <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
-              <Terminal />
+              <div className="relative mx-auto w-full rounded-lg shadow-lg overflow-hidden">
+                <Terminal />
+              </div>
             </div>
           </div>
         </div>
@@ -39,9 +46,15 @@ export default function HomePage() {
 
       <section className="py-16 bg-white w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-            <div>
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900">Powerful Features</h2>
+            <p className="mt-4 text-xl text-slate-600 max-w-2xl mx-auto">
+              Everything you need to build a successful SaaS product
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white mb-6">
                 <svg viewBox="0 0 24 24" className="h-6 w-6">
                   <path
                     fill="currentColor"
@@ -49,71 +62,76 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <div className="mt-5">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Next.js and React
-                </h2>
-                <p className="mt-2 text-base text-gray-500">
-                  Leverage the power of modern web technologies for optimal
-                  performance and developer experience.
-                </p>
-              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                Next.js and React
+              </h3>
+              <p className="text-slate-600">
+                Leverage the power of modern web technologies for optimal
+                performance and developer experience.
+              </p>
             </div>
 
-            <div className="mt-10 lg:mt-0">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white">
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white mb-6">
                 <Database className="h-6 w-6" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Postgres and Drizzle ORM
-                </h2>
-                <p className="mt-2 text-base text-gray-500">
-                  Robust database solution with an intuitive ORM for efficient
-                  data management and scalability.
-                </p>
-              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                Postgres and Drizzle ORM
+              </h3>
+              <p className="text-slate-600">
+                Robust database solution with an intuitive ORM for efficient
+                data management and scalability.
+              </p>
             </div>
 
-            <div className="mt-10 lg:mt-0">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white">
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white mb-6">
                 <CreditCard className="h-6 w-6" />
               </div>
-              <div className="mt-5">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Stripe Integration
-                </h2>
-                <p className="mt-2 text-base text-gray-500">
-                  Seamless payment processing and subscription management with
-                  industry-leading Stripe integration.
-                </p>
-              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                Stripe Integration
+              </h3>
+              <p className="text-slate-600">
+                Seamless payment processing and subscription management with
+                industry-leading Stripe integration.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
                 Ready to launch your SaaS?
               </h2>
-              <p className="mt-3 max-w-3xl text-lg text-gray-500">
+              <p className="mt-4 text-xl text-slate-600">
                 Our template provides everything you need to get your SaaS up
                 and running quickly. Don't waste time on boilerplate - focus on
                 what makes your product unique.
               </p>
+              <div className="mt-6 flex flex-wrap gap-4">
+                <div className="flex items-center text-slate-500">
+                  <Zap className="h-5 w-5 text-orange-500 mr-2" />
+                  <span>Quick setup</span>
+                </div>
+                <div className="flex items-center text-slate-500">
+                  <Layers className="h-5 w-5 text-orange-500 mr-2" />
+                  <span>Scalable architecture</span>
+                </div>
+              </div>
             </div>
             <div className="mt-8 lg:mt-0 flex justify-center lg:justify-end">
               <a
                 href="https://github.com/nextjs/saas-starter"
                 target="_blank"
+                className="group"
               >
-                <Button className="bg-white hover:bg-gray-100 text-black border border-gray-200 rounded-full text-xl px-12 py-6 inline-flex items-center justify-center">
-                  View the code
-                  <ArrowRight className="ml-3 h-6 w-6" />
+                <Button className="relative overflow-hidden bg-white text-slate-900 border border-slate-200 hover:border-slate-300 shadow-sm rounded-full text-lg px-8 py-5 inline-flex items-center justify-center">
+                  <span className="relative z-10">View the code</span>
+                  <ArrowRight className="relative z-10 ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </a>
             </div>
